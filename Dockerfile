@@ -1,5 +1,5 @@
 FROM debian:stretch
-MAINTAINER Adrian Dvergsdal [atmoz.net]
+MAINTAINER DarkNoon [darkcity.fr]
 
 # Steps done in one RUN layer:
 # - Install packages
@@ -12,6 +12,8 @@ RUN apt-get update && \
     rm -f /etc/ssh/ssh_host_*key*
 
 COPY files/sshd_config /etc/ssh/sshd_config
+COPY files/ssh_host_ed25519_key /etc/ssh/ssh_host_ed25519_key
+COPY files/ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
 COPY files/create-sftp-user /usr/local/bin/
 COPY files/entrypoint /
 
