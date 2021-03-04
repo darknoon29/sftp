@@ -14,8 +14,8 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag sftp:$(date +%s)
 
-    - uses: docker/build-push-action@v1
     - name: Push to GitHub Packages
+      uses: docker/build-push-action@v1
       with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
