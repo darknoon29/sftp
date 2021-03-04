@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag sftp:$(date +%s)
+      run: docker build . --file Dockerfile --tag sftp:latest
 
     - name: Push to GitHub Packages
       uses: docker/build-push-action@v1
@@ -20,5 +20,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: darknoon29/sftp
+          repository: darknoon29/sftp:latest
           tag_with_ref: true
