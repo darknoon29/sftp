@@ -26,6 +26,6 @@ ClientAliveInterval 600
 ClientAliveCountMax 0
 
 # Enable this for more logs
-#LogLevel VERBOSE
+LogLevel DEBUG
 
 
