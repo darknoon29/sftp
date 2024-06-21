@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stable
 MAINTAINER DarkNoon [darkcity.fr]
 
 # Steps done in one RUN layer:
